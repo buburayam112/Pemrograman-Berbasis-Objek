@@ -42,15 +42,21 @@ Aplikasi ini membantu proses operasional toko/gudang skala kecil-menengah, menca
 
 | Login | Dashboard |
 |---|---|
-| (tambahkan screenshot di sini) | (tambahkan screenshot di sini) |
+| <img width="1370" height="910" alt="image" src="[https://github.com/user-attachments/assets/7867d108-ad51-4ddc-9853-fcfecf463674](https://uploads.onecompiler.io/44vrs5jr5/1784533749037/Screenshot%202026-07-20%20144301.png)" />
+) | (<img width="1913" height="1026" alt="image" src="[https://github.com/user-attachments/assets/f5a53351-9b44-4823-954d-f382454294ed](https://uploads.onecompiler.io/44vrs5jr5/1784533756511/Screenshot%202026-07-20%20144404.png)" />
+) |
 
 | Modul Kasir | Manajemen Produk |
 |---|---|
-| (tambahkan screenshot di sini) | (tambahkan screenshot di sini) |
+|[ (<img width="1907" height="1057" alt="image" src="[https://github.com/user-attachments/assets/8db9e03e-ebe4-40f0-a277-cc404626b899](https://uploads.onecompiler.io/44vrs5jr5/1784533767321/Screenshot%202026-07-20%20144453.png)" />
+)](https://uploads.onecompiler.io/44vrs5jr5/1784533816060/Screenshot%202026-07-20%20145001.png) | (<img width="1882" height="1055" alt="image" src="[https://github.com/user-attachments/assets/654b06d5-a756-4567-8901-3b87357ab6f4](https://uploads.onecompiler.io/44vrs5jr5/1784533778110/Screenshot%202026-07-20%20144520.png)" />
+) |
 
 | Manajemen Stok | Laporan Penjualan |
 |---|---|
-| (tambahkan screenshot di sini) | (tambahkan screenshot di sini) |
+| |[ (<img width="1907" height="1057" alt="image" src="[[https://github.com/user-attachments/assets/8db9e03e-ebe4-40f0-a277-cc404626b899](https://uploads.onecompiler.io/44vrs5jr5/1784533767321/Screenshot%202026-07-20%20144453.png)](https://uploads.onecompiler.io/44vrs5jr5/1784533614091/Screenshot%202026-07-20%20144548.png)" />
+)] |[ (<img width="1907" height="1057" alt="image" src="https://uploads.onecompiler.io/44vrs5jr5/1784533816060/Screenshot%202026-07-20%20145001.png" />
+)] |
 
 Simpan screenshot di folder `assets/screenshots/` lalu ganti placeholder di atas dengan `![nama](assets/screenshots/nama-file.png)`.
 
