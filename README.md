@@ -133,6 +133,5 @@ Pastikan Python 3.10+ sudah terpasang. Modul `tkinter` dan `sqlite3` sudah terma
 | Syafiq Indirwan | 241230065 |
 | Iksan Nugraha | 241230057 |
 
-## Lisensi
 
 Proyek ini dibuat untuk keperluan akademik tugas akhir mata kuliah Pemrograman Berbasis Objek.
