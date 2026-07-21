@@ -27,15 +27,30 @@ class ProductFrame(BaseFrame):
 
     def _build_ui(self):
         """Bangun seluruh komponen UI."""
-        content = self._create_content_frame()
-        content.grid_rowconfigure(1, weight=1)
-        content.grid_columnconfigure(0, weight=1)
+        # outer menggunakan grid (sesuai BaseFrame parent),
+        # namun di DALAM outer bebas pakai pack agar form_card
+        # mengambil tinggi naturalnya dan table_card fill sisa ruang.
+        outer = tk.Frame(self, bg=COLORS["bg_main"])
+        outer.grid(row=1, column=0, sticky="nsew", padx=20, pady=20)
+        outer.grid_rowconfigure(1, weight=1)   # table_card fill sisa
+        outer.grid_columnconfigure(0, weight=1)
 
-        # ── Panel Form ──
-        form_card = self._create_card(content, title="Form Produk",
-                                       row=0, column=0, sticky="ew")
+        # ── Panel Form (tinggi natural, tidak di-stretch) ──
+        form_card = tk.Frame(outer, bg=COLORS["bg_card"],
+                             relief="solid", bd=1,
+                             highlightbackground=COLORS["border"],
+                             highlightthickness=1)
+        form_card.grid(row=0, column=0, sticky="ew", pady=(0, 10))
         form_card.grid_columnconfigure(1, weight=1)
         form_card.grid_columnconfigure(3, weight=1)
+
+        # Judul + separator (meniru _create_card)
+        tk.Label(form_card, text="Form Produk", font=FONTS["subtitle"],
+                 bg=COLORS["bg_card"], fg=COLORS["text_dark"],
+                 anchor="w").grid(row=0, column=0, sticky="ew",
+                                  padx=15, pady=(15, 5), columnspan=4)
+        ttk.Separator(form_card, orient="horizontal").grid(
+            row=1, column=0, sticky="ew", padx=15, pady=(0, 10), columnspan=4)
 
         # Row 2: Kode Barang + Nama Barang
         _, self._entry_kode = self._create_label_entry(
@@ -66,9 +81,13 @@ class ProductFrame(BaseFrame):
         _, self._entry_stok_min = self._create_label_entry(
             form_card, "Stok Minimum:", 5, 0, 10)
 
-        # Row 6: Tombol Aksi
+        # Separator visual sebelum tombol
+        ttk.Separator(form_card, orient="horizontal").grid(
+            row=6, column=0, columnspan=4, sticky="ew", padx=15, pady=(8, 0))
+
+        # Row 7: Tombol Aksi CRUD
         btn_frame = tk.Frame(form_card, bg=COLORS["bg_card"])
-        btn_frame.grid(row=6, column=0, columnspan=4, pady=(10, 15), padx=15,
+        btn_frame.grid(row=7, column=0, columnspan=4, pady=(8, 15), padx=15,
                        sticky="w")
 
         self._btn_simpan = self._create_button(
@@ -84,11 +103,22 @@ class ProductFrame(BaseFrame):
             btn_frame, "🔄  Bersihkan", self._clear_form, "secondary",
             row=0, column=3, padx=5)
 
-        # ── Panel Tabel ──
-        table_card = self._create_card(content, title="Daftar Produk",
-                                        row=1, column=0, pady=(10, 5))
+        # ── Panel Tabel (fill sisa ruang) ──
+        table_card = tk.Frame(outer, bg=COLORS["bg_card"],
+                              relief="solid", bd=1,
+                              highlightbackground=COLORS["border"],
+                              highlightthickness=1)
+        table_card.grid(row=1, column=0, sticky="nsew")
         table_card.grid_columnconfigure(0, weight=1)
         table_card.grid_rowconfigure(3, weight=1)
+
+        # Judul + separator table_card
+        tk.Label(table_card, text="Daftar Produk", font=FONTS["subtitle"],
+                 bg=COLORS["bg_card"], fg=COLORS["text_dark"],
+                 anchor="w").grid(row=0, column=0, sticky="ew",
+                                  padx=15, pady=(15, 5), columnspan=10)
+        ttk.Separator(table_card, orient="horizontal").grid(
+            row=1, column=0, sticky="ew", padx=15, pady=(0, 10), columnspan=10)
 
         # Search bar
         search_frame = tk.Frame(table_card, bg=COLORS["bg_card"])
